@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <h2>Array of Numbers from 1 - 100</h2>
+    <div class="box"></div>
+    <h2>Filtered Array</h2>
+    <div class="box2"></div>
+    <div class="buttons">
+        <button id="even-btn" class="btn green" onclick="getEven()">Get Even Number</button>
+        <button id="odd-btn" class="btn blue" onclick="getOdd()">Get Odd Number</button>
+        <button id="prime-btn" class="btn red " onclick="getPrime()">Get Prime Number</button>
+        <button id="composite-btn" class="btn purple" onclick="getComposite()">Get Composite Number</button>
+      </div>
+    <script>
+      let box = document.querySelector(".box");
+      let box2 = document.querySelector(".box2");
+      for (let index = 0; index <= 100; index++) {
+        box.innerHTML += `<span>${index}</span>;`
+      }
+      const even = document.getElementsByid("even-btn");
+      const odd = document.getElementsByid("odd-btn");
+      const prime = document.getElementsByid("prime-btn");
+      const composite = document.getElementsByid("composite-btn");
+      function getEven() {
+        box2.innerHTML = "";
+        for (let index = 0; index < 100; index++) {
+          if (index % 2 === 0) {
+            box2.innerHTML += `<span>${index}</span>`
+            }
+            }
+            }
+            function getOdd() {
+              box2.innerHTML = "";
+              for (let index = 0; index < 100; index++) {
+                if (index % 2 !== 0) {
+                  box2.innerHTML += `<span>${index}</span>`
+                  }
+                  }
+                }
+                function getPrime() {
+                  box2.innerHTML = "";
+                  for (let index = 0; index < 100; index++) {
+                    if (index > 1) {
+                      let isPrime = true
+                      for (let i = 2; i < index; i++) {
+                        if (index % i === 0) {
+                          isPrime = false
+                          }
+                          }
+                          if (isPrime) {
+                            box2.innerHTML += `<span>${index}</span>`
+                            }
+                            }
+                            }
+                }
+                  function getComposite() {
+                    box2.innerHTML = "";
+                    for (let index = 0; index < 100; index++) {
+                      if (index > 1) {
+                        for (let i = 2; i < index; i++) {
+                          if (index % i === 0) {
+                            box2.innerHTML += `<span>${index}</span>`
+                            break;
+                            }
+                            }
+                            }
+                            }
+                          }
+    </script>
+  </body>
+</html>
